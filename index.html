@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yuri Informação Ltda</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Yuri Informação Ltda</h1>
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#benefits">Benefícios</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section id="home">
+  <h2>Bem-vindo à Yuri Informação Ltda</h2>
+  <p>Seu parceiro em manutenção e suporte técnico para computadores e notebooks. Soluções rápidas, eficientes e confiáveis para clientes residenciais e empresariais.</p>
+</section>
+
+<section id="services">
+  <h2>🛠️ Serviços</h2>
+  <p>Conheça nossos principais serviços de TI e manutenção:</p>
+  <div class="grid">
+    <div class="card">
+      <h3>🖥️ Diagnóstico e Reparos</h3>
+      <p>Identificação precisa e soluções rápidas para hardware e software.</p>
+    </div>
+    <div class="card">
+      <h3>🧹 Manutenção Preventiva</h3>
+      <p>Limpeza, otimização e prevenção de falhas no seu equipamento.</p>
+    </div>
+    <div class="card">
+      <h3>💾 Recuperação de Dados</h3>
+      <p>Salvamos arquivos de HD, SSD e pendrives com segurança.</p>
+    </div>
+    <div class="card">
+      <h3>💻 Formatação e Instalação</h3>
+      <p>Instalação de sistemas e programas para seu computador ou notebook.</p>
+    </div>
+    <div class="card">
+      <h3>⚙️ Upgrade de Hardware</h3>
+      <p>Melhoria de desempenho com SSD, memória RAM e outros upgrades.</p>
+    </div>
+  </div>
+</section>
+
+<section id="benefits">
+  <h2>✨ Benefícios</h2>
+  <p>Vantagens da manutenção preventiva e de nossos serviços:</p>
+  <div class="grid">
+    <div class="card">
+      <h3>🚀 Desempenho Aprimorado</h3>
+      <p>Computador mais rápido, leve e eficiente.</p>
+    </div>
+    <div class="card">
+      <h3>🔋 Maior Vida Útil</h3>
+      <p>Menos desgaste e mais durabilidade dos componentes.</p>
+    </div>
+    <div class="card">
+      <h3>🔐 Proteção de Dados</h3>
+      <p>Segurança para não perder arquivos importantes.</p>
+    </div>
+    <div class="card">
+      <h3>💰 Economia</h3>
+      <p>Evite custos altos com problemas inesperados.</p>
+    </div>
+    <div class="card">
+      <h3>🧘‍♂️ Mais Tranquilidade</h3>
+      <p>Trabalhe sem preocupação, seu equipamento em boas mãos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>📖 Sobre Nós</h2>
+  <p>Somos especialistas em manutenção, formatação, upgrades e serviços avançados em TI. Atuamos em Itaquaquecetuba, São Paulo e região, com foco na excelência e satisfação dos nossos clientes.</p>
+</section>
+
+<section id="contact">
+  <h2>📞 Contato</h2>
+  <p class="contact-info">
+    ✉️ Email: <a href="mailto:yuristeve11@gmail.com">yuristeve11@gmail.com</a><br />
+    📱 WhatsApp: (11) 94583-7840<br />
+    📍 Atendimento em Itaquaquecetuba - SP e Região
+  </p>
+</section>
+
+</main>
+
+<footer>
+  &copy; 2025 Yuri Informação Ltda - Todos os direitos reservados.
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if(pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if(link.getAttribute("href").substring(1) === current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const id = link.getAttribute("href").substring(1);
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  });
+});
+</script>
+
+</body>
+</html>
